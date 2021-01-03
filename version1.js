@@ -1,7 +1,3 @@
-//Good Examples: 
-//https://rlmoser99.github.io/rock-paper-scissors/ 
-//https://mooniidev.github.io/rock-paper-scissors-game/
-
 
 //begin the 5 round rock-paper-scissors game!
 game();
