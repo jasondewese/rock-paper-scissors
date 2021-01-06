@@ -1,0 +1,83 @@
+#container {
+    background-color: #BBF;
+    display: grid;
+    grid-template-rows: 4em 1.5em 10em 5em;
+
+    justify-items: center;
+}
+
+#gameArea {
+    background-color: #7C8;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    column-gap: 20px;
+}
+
+#humanBox {
+    background-color: #FBB;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    column-gap: 20px;
+    row-gap: 15px;
+
+    grid-template-areas:
+    "playerLabel playerLabel score"
+    "rock paper scissors";
+}
+
+#playerLabel {
+    grid-area: playerLabel;
+}
+#pScoreBox {
+    grid-area: score;
+}
+#playerRock {
+    grid-area: rock;
+}
+#playerPaper {
+    grid-area: paper;
+}
+#playerScissors {
+    grid-area: scissors;
+}
+
+.playerButtons {
+    border-radius: 5px;
+}
+
+#computerBox {
+    background-color: #BFB;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    column-gap: 20px;
+    row-gap: 15px;
+
+    grid-template-areas: 
+    "computerLabel computerLabel score"
+    "rock paper scissors";
+}
+
+#CPULabel {
+    grid-area: computerLabel;
+}
+#cScoreBox {
+    grid-area: score;
+}
+#computerRock {
+    grid-area: rock;
+}
+#computerPaper {
+    grid-area: paper;
+}
+#computerScissors {
+    grid-area: scissors;
+}
+
+.compButtons {
+    border-radius: 5px;
+}
