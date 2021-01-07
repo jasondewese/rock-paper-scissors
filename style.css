@@ -81,3 +81,8 @@
 .compButtons {
     border-radius: 5px;
 }
+
+/*This allows the \n character to work properly in the html*/
+#gameResults {
+    white-space: pre-wrap;
+}

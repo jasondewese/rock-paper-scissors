@@ -16,6 +16,13 @@
 
 //begin the 5 round rock-paper-scissors game!
 //game();
+let playerScore = 0;
+let computerScore = 0;
+let gameResults = "";
+
+const pScoreDisplay = document.querySelector('#pScore');
+const cScoreDisplay = document.querySelector('#cScore');
+
 const gameResult = document.querySelector('#gameResults');
 
 
@@ -23,18 +30,21 @@ const gameResult = document.querySelector('#gameResults');
 const rockBtn = document.querySelector('#playerRock');
 rockBtn.addEventListener('click', () => {
   playGame('Rock', computerPlay());  
+  console.log();
 });
 
 //player game with 'Paper' as player selection
 const paperBtn = document.querySelector('#playerPaper');
-rockBtn.addEventListener('click', () => {
+paperBtn.addEventListener('click', () => {
   playGame('Paper', computerPlay());  
+  
 });
 
 //player game with 'Scissors' as player selection
 const scissorsBtn = document.querySelector('#playerScissors');
-rockBtn.addEventListener('click', () => {
+scissorsBtn.addEventListener('click', () => {
   playGame('Scissors', computerPlay());  
+  
 });
 
 
@@ -88,21 +98,20 @@ function playGame(playerSelection, computerSelection) {
     {
         if (computerSelection.toLowerCase() === 'rock')
         {
-            gameResult.textContent = "Draw! Rock ties Rock";
-            console.log('Draw! Rock ties Rock');
-            return 0;
+            gameResults += "Draw! Rock ties Rock\n";
+            updateScreen();
         }
         if (computerSelection.toLowerCase() === 'paper')
         {
-            gameResult.textContent ='You Lose! Paper beats Rock';
-            console.log('You Lose! Paper beats Rock');
-            return -1;
+            gameResults +='You Lose! Paper beats Rock\n';
+            computerScore++;
+            updateScreen();
         }
         if (computerSelection.toLowerCase() === 'scissors')
         {
-            gameResult.textContent = 'You Win! Rock beats Scissors';
-            console.log('You Win! Rock beats Scissors');
-            return 1;
+            gameResults += 'You Win! Rock beats Scissors\n';
+            playerScore++;
+            updateScreen();
         }
     }
 
@@ -112,21 +121,21 @@ function playGame(playerSelection, computerSelection) {
     {
         if (computerSelection.toLowerCase() === 'rock')
         {
-            gameResult.textContent = 'You Win! Paper beats Rock';
-            console.log('You Win! Paper beats Rock');
-            return 1;
+            gameResults+=  'You Win! Paper beats Rock\n';
+            playerScore++;
+            updateScreen();
         }
         if (computerSelection.toLowerCase() === 'paper')
         {
-            gameResult.textContent = 'Draw! Paper ties Paper';
-            console.log('Draw! Paper ties Paper');
-            return 0;
+            gameResults += 'Draw! Paper ties Paper\n';
+            updateScreen();
+            
         }
         if (computerSelection.toLowerCase() === 'scissors')
         {
-            gameResult.textContent = 'You Lose! Scissors beats Paper';
-            console.log('You Lose! Scissors beats Paper');
-            return -1;
+            gameResults += 'You Lose! Scissors beats Paper\n';
+            computerScore++;
+            updateScreen();
         }
     }
 
@@ -135,18 +144,20 @@ function playGame(playerSelection, computerSelection) {
     {
         if (computerSelection.toLowerCase() === 'rock')
         {
-            console.log('You Lose! Rock beats Scissors');
-            return -1;
+            gameResults += "You Lose! Rock beats Scissors\n"
+            computerScore++;
+            updateScreen();
         }
         if (computerSelection.toLowerCase() === 'paper')
         {
-            console.log('You Win! Scissors beats Paper');
-            return 1;
+            gameResults += "You Win! Scissors beats Paper\n";
+            playerScore++;
+            updateScreen();
         }
         if (computerSelection.toLowerCase() === 'scissors')
         {
-            console.log('Draw! Scissors ties Scissors');
-            return 0;
+            gameResults += "Draw! Scissors ties Scissors\n";
+            updateScreen();
         }
     }
 
@@ -174,4 +185,11 @@ function computerPlay() {
     }
 
     
+}
+
+function updateScreen() {
+    pScoreDisplay.textContent = playerScore;
+    cScoreDisplay.textContent = computerScore;
+    gameResult.innerText = gameResults;
+
 }
