@@ -1,7 +1,7 @@
 #container {
-    background-color: #BBF;
+    /*background-color: #BBF; */
     display: grid;
-    grid-template-rows: 4em 1.5em 10em 5em;
+    grid-template-rows: 4em 1.5em 1.5em 10em 5em;
 
     justify-items: center;
 }
@@ -10,6 +10,7 @@
     background-color: #7C8;
     display: grid;
     grid-template-columns: 50% 50%;
+	margin-top: 10px;
 
     column-gap: 20px;
 }
