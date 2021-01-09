@@ -1,25 +1,11 @@
-//Good Examples: 
-//https://rlmoser99.github.io/rock-paper-scissors/ 
-//https://mooniidev.github.io/rock-paper-scissors-game/
-
-
 
 /******************************************** 
  * Author: Jason Dewese
  * Initial Creation: 1/3/2021
- * Last Edit: 1/5/2021
- * Last Edit: 1/8/2021
+ * Last Edit: 1/9/2021
  * Title: Rock-Paper-Scissors
  *
- *Edits made without git to style.css and script.js and index.html
- *Need to add and commit to git log
- 
- 
- *1/8 Edits:
- *Added logic to end game after someone scores 5 points
- *Added 'New Game' button and code to reset game board when clicked
- *Removed background color of container div
- 
+ *
 *********************************************/
 
 
@@ -34,17 +20,28 @@ let roundCounter = 0;
 const pScoreDisplay = document.querySelector('#pScore');
 const cScoreDisplay = document.querySelector('#cScore');
 const gameResult = document.querySelector('#gameResults');
+
+//Player Selectable buttons
 const rockBtn = document.querySelector('#playerRock');
 const paperBtn = document.querySelector('#playerPaper');
 const scissorsBtn = document.querySelector('#playerScissors');
 const newGameButton = document.querySelector('#newGameButton');
 
+//Computer buttons
+const compRock = document.querySelector('#computerRock');
+const compPaper = document.querySelector('#computerPaper');
+const compScissors = document.querySelector('#computerScissors');
+
+//clear the screen
+updateScreen();
+
 //play game with 'Rock' as player selection
 rockBtn.addEventListener('click', () => {
-  if (gameOver === false)
-  {
-	 playGame('Rock', computerPlay());
-  }
+    
+    if (gameOver === false)
+    {
+        playGame('Rock', computerPlay());
+    }
     
 });
 
@@ -79,7 +76,12 @@ newGameButton.addEventListener('click', () => {
 	roundCounter = 0;
 	
 	gameOver = false;
-	
+    
+    //deselect last computer selection
+    compRock.className = "compButtons";
+    compPaper.className = "compButtons";
+    compScissors.className = "compButtons";
+
 	updateScreen();
 	
 	
@@ -91,6 +93,8 @@ function playGame(playerSelection, computerSelection) {
 	roundCounter++;
 	gameResults += "Round " + roundCounter + ". ";
     
+
+
     
     
     //If player picked Rock
@@ -170,19 +174,36 @@ function playGame(playerSelection, computerSelection) {
 }
 
 
-//randomly returns 'Rock', 'Paper', or 'Scissors'
+//Randomly returns 'Rock', 'Paper', or 'Scissors'
+//Shows computer selection on screen
 function computerPlay() {
     let decision = Math.random();
     
     if (decision < 0.33) {
+        
+        //Toggle computer selection effect
+        compRock.className = "computerSelection";
+        compPaper.className = "compButtons";
+        compScissors.className = "compButtons";
+        
         return 'Rock';
     }
     else if (decision < 0.67)
     {
+
+        //Toggle computer selection effect
+        compRock.className = "compButtons";
+        compPaper.className = "computerSelection";
+        compScissors.className = "compButtons";
         return 'Paper';
     }
     else
     {
+
+        //Toggle computer selection effect
+        compRock.className = "compButtons";
+        compPaper.className = "compButtons";
+        compScissors.className = "computerSelection";
         return 'Scissors';
     }
 

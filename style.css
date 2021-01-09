@@ -6,12 +6,19 @@
     justify-items: center;
 }
 
+#rules {
+    text-align: center;
+    font-weight: bold;
+}
+
 #gameArea {
     background-color: #7C8;
+    width: 90%;
+    
     display: grid;
     grid-template-columns: 50% 50%;
 	margin-top: 10px;
-
+    
     column-gap: 20px;
 }
 
@@ -20,7 +27,7 @@
     display: grid;
     grid-template-rows: 1fr 2fr;
     grid-template-columns: 1fr 1fr 1fr;
-
+   
     column-gap: 20px;
     row-gap: 15px;
 
@@ -31,9 +38,14 @@
 
 #playerLabel {
     grid-area: playerLabel;
+    font-size: 150%;
+    text-align: center;
+    font-weight: bold;
 }
 #pScoreBox {
     grid-area: score;
+    text-align: center;
+    font-weight: bold;
 }
 #playerRock {
     grid-area: rock;
@@ -54,6 +66,7 @@
     display: grid;
     grid-template-rows: 1fr 2fr;
     grid-template-columns: 1fr 1fr 1fr;
+   
 
     column-gap: 20px;
     row-gap: 15px;
@@ -65,9 +78,14 @@
 
 #CPULabel {
     grid-area: computerLabel;
+    font-size: 150%;
+    text-align: center;
+    font-weight: bold;
 }
 #cScoreBox {
     grid-area: score;
+    text-align: center;
+    font-weight: bold;
 }
 #computerRock {
     grid-area: rock;
@@ -86,4 +104,22 @@
 /*This allows the \n character to work properly in the html*/
 #gameResults {
     white-space: pre-wrap;
+}
+
+.playerButtons:hover {
+    border-style: solid;
+    border-color: #000;
+    border-width: 3px;
+    color: #000;
+
+    background-color: #DDD;
+}
+
+.computerSelection{
+    border-style: solid;
+    border-color: #000;
+    border-width: 3px;
+    color: #000;
+    border-radius : 5px;
+    background-color: #DDD;
 }
