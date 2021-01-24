@@ -1,6 +1,6 @@
 This is a simple rock-paper-scissors game against the computer.
 
-The purpose of this project is to practice applying JavaScript to html and css.
+The purpose of this project is to practice applying JavaScript to HTML and CSS.
 
 
 What I learned:
@@ -14,3 +14,5 @@ What I learned:
  -Calling functions with user inputs as parameters
  
 -Better use of html structure and CSS grid to create proper layout before coding
+
+-Designing the webpage layout by hand as a prototype first before implementing in code

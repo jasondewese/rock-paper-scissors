@@ -2,6 +2,12 @@
 <html>
 <head>
   <link rel="stylesheet" href="style.css">
+
+  <!--Icons shared by Font Awesome
+    https://creativecommons.org/licenses/by/4.0/
+  -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+  
   <title>Page Title</title>
   <meta charset="UTF-8"/>
   
@@ -17,18 +23,36 @@
         <div id="pScoreBox">Score
           <div id="pScore">0</div>
         </div>
-        <button id="playerRock" type="button" class="playerButtons">Rock</button>
-        <button id="playerPaper" type = "button" class="playerButtons" >Paper</button>
-        <button id="playerScissors" type = "button" class="playerButtons">Scissors</button>
+        <button id="playerRock" type="button" class="playerButtons">
+          <i class="far fa-hand-rock fa-5x"></i>
+          Rock
+        </button>
+        <button id="playerPaper" type = "button" class="playerButtons">
+          <i class="far fa-hand-paper fa-5x"></i>
+          Paper
+        </button>
+        <button id="playerScissors" type = "button" class="playerButtons">
+          <i class="far fa-hand-scissors fa-5x"></i>
+          Scissors
+        </button>
       </div>
       <div id="computerBox">
         <div id="CPULabel">Computer</div>
         <div id="cScoreBox">Score
           <div id="cScore">0</div>
         </div>
-        <button id="computerRock" class="compButtons">Rock</button>
-        <button id="computerPaper" class="compButtons">Paper</button>
-        <button id="computerScissors" class="compButtons">Scissors</button>
+        <button id="computerRock" class="compButtons">
+          <i class="far fa-hand-rock fa-5x"></i>
+          Rock
+        </button>
+        <button id="computerPaper" class="compButtons">
+          <i class="far fa-hand-paper fa-5x"></i>
+          Paper
+        </button>
+        <button id="computerScissors" class="compButtons">
+          <i class="far fa-hand-scissors fa-5x"></i>
+          Scissors
+        </button>
       </div>
     </div>
     <div id="gameResults"></div>
